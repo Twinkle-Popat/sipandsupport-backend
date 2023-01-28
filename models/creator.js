@@ -15,6 +15,10 @@ const creatorSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    userId: {
+        type: String,
+        unique: true
+    },
     password: String,
     googleId: String,
     desciption: String,

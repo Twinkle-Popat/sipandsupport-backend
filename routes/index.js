@@ -6,6 +6,7 @@ const session = require("express-session");
 const passport = require("passport");
 const registerController = require("../controllers/registerController");
 const loginController = require("../controllers/loginController");
+const membershipController = require("../controllers/membershipController");
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -40,5 +41,6 @@ router.get("/logout", function(req,res){
 
 router.post("/register", registerController.registerCreator);
 router.post("/login", loginController.loginCreator);
+router.post("/membership/:userId", membershipController.addMembership);
 
 module.exports = router;
