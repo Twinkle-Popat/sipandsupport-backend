@@ -34,20 +34,20 @@ const creatorSchema = new mongoose.Schema({
         price: Number
     }],
     followers: [String],
-    post: [{
-        text: String,
-        comments: [{
-            hash: String,
-            commentText: String
-        }]
-    }],
-    poll: {
-        question: String,
-        option: {
-            text: String,
-            count: Number
-        }
-    }
+    // post: [{
+    //     text: String,
+    //     comments: [{
+    //         hash: String,
+    //         commentText: String
+    //     }]
+    // }],
+    // poll: {
+    //     question: String,
+    //     option: {
+    //         text: String,
+    //         count: Number
+    //     }
+    // }
 });
 
 creatorSchema.plugin(passportLocalMongoose);

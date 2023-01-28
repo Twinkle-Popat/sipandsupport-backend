@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const postSchema = mongoose.Schema({
-    postId: Number,
+    userId: String,
     content: String,
     comments: [{
         hash: String,
