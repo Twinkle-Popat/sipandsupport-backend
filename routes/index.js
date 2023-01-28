@@ -7,6 +7,7 @@ const passport = require("passport");
 const registerController = require("../controllers/registerController");
 const loginController = require("../controllers/loginController");
 const membershipController = require("../controllers/membershipController");
+const supportController = require("../controllers/supportControllers");
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -42,5 +43,6 @@ router.get("/logout", function(req,res){
 router.post("/register", registerController.registerCreator);
 router.post("/login", loginController.loginCreator);
 router.post("/membership/:userId", membershipController.addMembership);
+router.post("/support/:userId",supportController.supporters)
 
 module.exports = router;

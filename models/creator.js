@@ -31,7 +31,7 @@ const creatorSchema = new mongoose.Schema({
     support: [{
         hash: String,
         message: String,
-        amount: Number
+        price: Number
     }],
     followers: [String],
     post: {
