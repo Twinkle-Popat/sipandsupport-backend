@@ -1,11 +1,12 @@
-import express from "express";
-import mongoose from "mongoose";
-import { APP_PORT, DB_URL } from "./config";
+require('dotenv').config();
+const express = require("express");
+const mongoose = require("mongoose");
+//import { APP_PORT, DB_URL } from "./config/index";
 const app = express();
-import routes from "./routes";
+const routes = require("./routes");
 // console.log(APP_PORT);
 
-mongoose.connect(DB_URL, {
+mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -19,4 +20,4 @@ db.once("open", () => {
 app.use(express.json());
 app.use("/api", routes);
 
-app.listen(APP_PORT, () => console.log(`Server is Running at ${APP_PORT}.`));
+app.listen(process.env.APP_PORT, () => console.log(`Server is Running at ${process.env.APP_PORT}.`));

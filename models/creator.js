@@ -1,9 +1,9 @@
-import mongoose from "mongoose";
-import session from "express-session";
-import passport from "passport";
-import passportLocalMongoose from "passport-local-mongoose";
+const mongoose = require("mongoose");
+const session = require('express-session');
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-import findOrCreate from "mongoose-findorcreate";
+const findOrCreate = require('mongoose-findorcreate');
 
 const creatorSchema = new mongoose.Schema({
     firstName: {
@@ -11,14 +11,11 @@ const creatorSchema = new mongoose.Schema({
         required: true
     },
     lastName: String,
-    email: {
+    username: {
         type: String,
         required: true
     },
-    password: {
-        type: String,
-        required: true,
-    },
+    password: String,
     googleId: String,
     desciption: String,
     socials: [String],
