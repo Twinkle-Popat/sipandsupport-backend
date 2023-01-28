@@ -12,6 +12,7 @@ const membershipController = {
         plan,
         amount,
       };
+      
       await creator.updateOne({ $push: { membership: newMember } });
       res.status(200).json("New membership added");
     } catch (error) {
