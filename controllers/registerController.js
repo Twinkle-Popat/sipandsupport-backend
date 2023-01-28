@@ -20,7 +20,7 @@ const registerController = {
             return next(err);
         }
 
-        res.json(req.body.email);
+        //res.json(req.body.email);
     }
 
 }

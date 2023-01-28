@@ -34,13 +34,13 @@ const creatorSchema = new mongoose.Schema({
         price: Number
     }],
     followers: [String],
-    post: {
+    post: [{
         text: String,
         comments: [{
             hash: String,
             commentText: String
         }]
-    },
+    }],
     poll: {
         question: String,
         option: {
