@@ -21,7 +21,7 @@ const creatorSchema = new mongoose.Schema({
     },
     password: String,
     googleId: String,
-    desciption: String,
+    description: String,
     socials: [String],
     membership: [{
         link: String,
@@ -70,7 +70,7 @@ passport.deserializeUser(function(id, done){
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:5000/auth/google/",
+    callbackURL: "http://localhost:5000/auth/google/dashboard",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
