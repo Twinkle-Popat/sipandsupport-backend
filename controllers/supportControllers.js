@@ -18,7 +18,7 @@ const supportController = {
     } catch (error) {
       return next(error);
     }
-    res.json(req.body.hash);
+    //res.json(req.body.hash);
   },
 };
 
