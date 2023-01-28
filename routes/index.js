@@ -8,7 +8,11 @@ const registerController = require("../controllers/registerController");
 const loginController = require("../controllers/loginController");
 const membershipController = require("../controllers/membershipController");
 const supportController = require("../controllers/supportControllers");
+<<<<<<< HEAD
 const socialController = require("../controllers/socialController");
+=======
+const followersController = require("../controllers/followersController");
+>>>>>>> 36f749497cfa4a9000f96a71dda8ec383bc1061a
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -44,6 +48,12 @@ router.get("/logout", function(req,res){
 router.post("/register", registerController.registerCreator);
 router.post("/login", loginController.loginCreator);
 router.post("/membership/:userId", membershipController.addMembership);
+<<<<<<< HEAD
 router.post("/support/:userId",supportController.supporters)
 router.post("/socials/:userId",socialController.addsocials)
+=======
+router.post("/support/:userId",supportController.supporters);
+router.post("/followers/:userId", followersController.addFollowers);
+
+>>>>>>> 36f749497cfa4a9000f96a71dda8ec383bc1061a
 module.exports = router;
