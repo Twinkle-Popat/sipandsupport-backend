@@ -11,7 +11,6 @@ const supportController = require("../controllers/supportControllers");
 const socialController = require("../controllers/socialController");
 const followersController = require("../controllers/followersController");
 const postController = require("../controllers/postController");
-const commentController = require("../controllers/commentController");
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -52,6 +51,5 @@ router.post("/socials/:userId",socialController.addsocials)
 router.post("/support/:userId",supportController.supporters);
 router.post("/followers/:userId", followersController.addFollowers);
 router.post("/post/:userId", postController.addPost);
-router.post("/post/comment/:userId", commentController.addComment);
 
 module.exports = router;
