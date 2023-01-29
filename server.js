@@ -20,4 +20,4 @@ db.once("open", () => {
 app.use(express.json());
 app.use("/api", routes);
 
-app.listen(process.env.APP_PORT, () => console.log(`Server is Running at ${process.env.APP_PORT}.`));
+app.listen(process.env.PORT, () => console.log(`Server is Running at ${process.env.PORT}.`));
