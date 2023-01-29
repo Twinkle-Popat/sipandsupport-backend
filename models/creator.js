@@ -35,11 +35,7 @@ const creatorSchema = new mongoose.Schema({
     }],
     followers: [String],
     post: [{
-        text: String,
-        comments: [{
-            hash: String,
-            commentText: String
-        }]
+        text: String
     }],
     poll: {
         question: String,

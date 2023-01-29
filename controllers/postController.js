@@ -6,18 +6,18 @@ const postController = {
       console.log(req.body);
       console.log(req.params);
       console.log(req.body);
-      
-      const { text, hash, commentText } = req.body;
-      const creator = await Creator.findOne({ userId: req.params.userId });
 
+      const { text } = req.body;
+      console.log(text);
+      const creator = await Creator.findOne({ userId: req.params.userId });
+      console.log(creator);
       const newPost = {
         text,
-        comments: {
-            hash,
-            commentText
-        }
+        // comments: {},
       };
-      
+
+
+
       await creator.updateOne({ $push: [{ post: newPost }] });
       res.status(200).json("New post added");
     } catch (error) {
@@ -27,4 +27,4 @@ const postController = {
   },
 };
 
-module.exports=  postController;
+module.exports = postController;
