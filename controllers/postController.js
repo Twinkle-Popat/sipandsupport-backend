@@ -1,4 +1,5 @@
 const Creator = require("../models/creator");
+const Post = require("../models/Post");
 
 const postController = {
   async addPost(req, res, next) {
@@ -6,20 +7,18 @@ const postController = {
       console.log(req.body);
       console.log(req.params);
       console.log(req.body);
-
-      const { text } = req.body;
-      console.log(text);
+      
       const creator = await Creator.findOne({ userId: req.params.userId });
-      console.log(creator);
-      const newPost = {
-        text,
-        // comments: {},
-      };
 
+      const newUser = Post({
+        content: req.body.content,
+        userId: req.params.userId
+    }).save(function (err, data) {
+        if (err) throw err;
+        console.log('Post added');
+    });
 
-
-      await creator.updateOne({ $push: [{ post: newPost }] });
-      res.status(200).json("New post added");
+      res.status(200).send(Post.findOne({userId: req.params.userId}));
     } catch (error) {
       return next(error);
     }
@@ -27,4 +26,4 @@ const postController = {
   },
 };
 
-module.exports = postController;
+module.exports=  postController;
