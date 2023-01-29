@@ -1,10 +1,12 @@
 require('dotenv').config();
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 //import { APP_PORT, DB_URL } from "./config/index";
 const app = express();
 const routes = require("./routes");
 // console.log(APP_PORT);
+app.use(cors());
 
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
