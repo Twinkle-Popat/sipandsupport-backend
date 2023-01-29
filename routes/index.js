@@ -49,7 +49,6 @@ router.post("/login", loginController.loginCreator);
 router.post("/membership/:userId", membershipController.addMembership);
 router.post("/support/:userId",supportController.supporters)
 router.post("/socials/:userId",socialController.addsocials)
-router.post("/support/:userId",supportController.supporters);
 router.post("/followers/:userId", followersController.addFollowers);
 router.post("/post/:userId", postController.addPost);
 router.post("/post/comment/:userId", commentController.addComment);
