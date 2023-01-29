@@ -22,7 +22,7 @@ const loginController = {
             return next(err);
         }
 
-        res.json(req.body.email);
+        res.send(req.body.email);
     }
 
 }
